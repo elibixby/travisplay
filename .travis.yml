@@ -4,7 +4,7 @@ go:
 - 1.5
 
 before_install:
-- export CIAEON=$(curl -s https://api.travis-ci.org/builds/$TRAVIS_BUILD_ID | jq '.message|contains("CIAEON=true")')
+- export CIAEON=$(curl -s https://api.travis-ci.org/builds/$TRAVIS_BUILD_ID | jq '.event_type=="api" and (.message|contains("CIAEON=true"))')
 
 install:
 - go get -t -v ./...
