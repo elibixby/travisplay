@@ -5,3 +5,14 @@ go:
 
 env:
   FOO=BAR
+
+before_install:
+- go get github.com/broady/travisplay/cmd/ciaeontools
+- ciaeontools $TRAVIS_BUILD_ID
+- which travis
+
+install:
+- go get -t -v ./...
+
+script:
+- go test -v ./...
