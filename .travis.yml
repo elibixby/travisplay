@@ -3,12 +3,8 @@ language: go
 go:
 - 1.5
 
-env:
-  FOO=BAR
-
 before_install:
-- go get github.com/broady/travisplay/cmd/ciaeontools
-- export CIAEON=$(curl -s https://api.travis-ci.org/builds/$TRAVIS_BUILD_ID | grep ci-aeon) || true
+- export CIAEON=$(curl -s https://api.travis-ci.org/builds/$TRAVIS_BUILD_ID | jq '.message|contains("CIAEON=true")')
 
 install:
 - go get -t -v ./...

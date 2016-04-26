@@ -29,7 +29,7 @@ func main() {
 		"request": {
 			"type": "cron",
 			"event_type": "cron",
-			"message": "Build started by ci-aeon."
+			"message": "Build started by ci-aeon.\n\nCIAEON=true"
 		}
 	}
 	`
