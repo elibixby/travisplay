@@ -8,7 +8,7 @@ env:
 
 before_install:
 - go get github.com/broady/travisplay/cmd/ciaeontools
-- ciaeontools $TRAVIS_BUILD_ID
+- export CIAEON=$(curl -s https://api.travis-ci.org/builds/$TRAVIS_BUILD_ID | grep ci-aeon) || true
 
 install:
 - go get -t -v ./...
