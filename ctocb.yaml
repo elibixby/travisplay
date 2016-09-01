@@ -5,4 +5,4 @@ builds:
     env:
       - FOO: bar
 
-script: test.sh
+script: ["find", "."]
