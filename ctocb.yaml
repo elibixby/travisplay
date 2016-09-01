@@ -1,8 +1,11 @@
-clone_into: gopath/src/github.com/broady/travisplay
+dir: /gopath/src/github.com/broady/travisplay
 
 builds:
-  - name: debian
+  - name: golang:1.7
+    env:
+      - FOO: bar
+  - name: ubuntu
     env:
       - FOO: bar
 
-script: ["bash", "-c", "find . | grep broady"]
+run: ["./test.sh"]
