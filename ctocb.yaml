@@ -1,0 +1,8 @@
+clone_into: gopath/src/github.com/broady/travisplay
+
+builds:
+  - name: debian
+    env:
+      - FOO: bar
+
+script: test.sh
