@@ -5,4 +5,4 @@ builds:
     env:
       - FOO: bar
 
-script: ["find", "."]
+script: ["bash", "-c", "find . | grep broady"]
